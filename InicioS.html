@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es"> <!-- Define el idioma de la Página Web -->
+<head>
+    <!-- Metadatos de la Página Web -->
+    <meta charset="UTF-8"> <!-- Define la codificación de caracteres -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Hace la página responsive -->
+    <title>LogisRivera</title> <!-- Título de la Pestaña del Navegador -->
+    
+    <!-- Hoja de Estilo de Materialize CSS (local) -->
+    <link rel="stylesheet" href="css/materialize.min.css">
+    <!-- Preconexión para optimizar carga de fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Carga de la fuente Playfair Display desde Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Importa los iconos de Material Icons de Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Inicio de estilos CSS personalizados -->
+    <style>
+        /* Fuente Principal de la Pagina */
+        body {
+            font-family: 'Playfair Display', serif;  /* Aplica fuente principal y de respaldo */
+            background-color: #f5f5f5;  /* Color de Fondo */
+            display: flex; /* Activa Flexbox */
+            min-height: 100vh; /* Define la altura ocupando toda la pantalla */
+            flex-direction: column; /* Ocupa toda la pantalla */
+        }
+        
+        /* Estilos para la etiqueta main */
+        main { 
+            flex: 1 0 auto; /* Hace que el contenido principal ocupe todo el espacio disponible */
+        }
+
+        /* Contenedor del Encabezado*/
+        .container-header {
+            max-width: 500px; /* Ocupa  todo el ancho disponible */
+            margin: 30px auto; /* Espacio superior e inferior */
+            padding: 0; /* Espacio interno */
+            background-color: rgba(247, 247, 247, 0.934); /* Define Fondo */
+            
+        }
+        
+        /* Celda del Encabezado que contiene el Logo de Distribuidora la Rivera*/
+        .logo-cell {
+            display: flex; /*Convierte la celda en un contenedor flexible*/
+            padding: 20px; /* Espacio interno */
+            justify-content: center;  /* Centrado horizontal */
+            align-items: center;     /* Centrado vertical */
+            background-color: #f5f5f5; /* Define Fondo de la Celda */
+        }
+       
+        /* Celda para el título */
+        .titulo-cell {
+            padding: 20px; /* Espacio interno */
+        }
+        
+        /* Estilo personalizado para el título */
+        .titulo-principal {
+            margin: 0; /* Elimina margen por defecto */
+            font-size: 2.8rem; /* Define tamaño de la fuente */
+            color: #400000; /* Color de texto gris oscuro */
+            font-weight: 700; /* Grosor de la fuente */
+            text-align: center; /* centra el texto */
+        }
+        
+        /* Estilo para el subtítulo */
+        .subtitulo {
+            margin-top: 25px; /* Espacio superior */
+            font-size: 1rem; /* Tamaño más pequeño que el título */
+            color: #000000;
+            text-align: center; /* centra el texto */
+        }
+        
+        /* Contenedor del Login*/
+        .container-login {
+            max-width: 500px; /* Ocupa  todo el ancho disponible */
+            border-radius: 8px; /* Redondea ligeramente los bordes */
+            margin: 30px auto; /* Espacio superior e inferior */
+            padding: 20px; /* Espacio interno */
+            background: white;  /* Define Fondo */
+            box-shadow: 0 2px 5px rgba(133, 4, 0, 0.856); /* Sombra del Contenedor */
+        }
+
+        /* Estilo del Boton del Login*/
+        .button-login {
+            width: 100%; /* Ocupa  todo el ancho disponible */
+            background-color: #400000; /* Define Fondo */
+            margin-top: 20px; /* Espacio superior */
+        }
+
+        /* Efecto Hover para el Boton del Login*/
+        .button-login:hover {
+            background-color: #300000; /* Color mas oscuro al pasar con el mouse */
+        }
+
+        /* Enlace "Olvidaste tu contraseña" */
+        .forgot-password {
+            display: block; /* Mostrar como bloque */
+            text-align: center; /* Centra el texto */
+            margin-top: 15px; /* Espacio superior */
+            color: #400000; /* Color del texto */
+        }
+
+        /* Estilo para etiquetas de los campos de formulario */
+        .input-field label {
+            color: #300000; /* Color del texto */
+        }
+        
+        /* Efectos de focus para los campos de entrada */
+        .input-field input[type=email]:focus + label, /*Selecciona las etiquetas del campo de email cuando esta en estado focus */
+        .input-field input[type=password]:focus + label { /*Selecciona las etiquetas del campo de password cuando esta en estado focus */
+            color: #400000 !important; /* Cambia el color del texto en estado focus*/
+        }
+
+        .input-field input[type=email]:focus, /*Selecciona el campo de email cuando esta en estado focus */
+        .input-field input[type=password]:focus { /*Selecciona el campo de password cuando esta en estado focus */
+            border-bottom: 1px solid #400000 !important; /* Línea inferior con color al estar en estado focus */
+            box-shadow: 0 1px 0 0 #300000 !important; /* Sombra sutil al estar en estado focus */
+        }
+
+        .input-field .prefix.active {
+            color: #300000 !important; /* Color cuando el input tiene focus */
+        }
+        
+        .input-field .prefix {
+            color: #400000; /* Color normal del icono */
+            transition: color 0.3s ease; /* Transición suave */
+        }
+
+       
+    </style> <!-- Fin de estilos CSS personalizados -->
+
+</head>
+
+<!-- Contenido de la Pagina-->
+<body>
+    
+<main> <!-- Contenido principal semántico -->
+    <div class="container"> <!-- Contenedor de Materialize -->
+        
+        <!-- Encabezado con el Logo y Titulo -->
+        <div class="container-header row valign-wrapper"> <!-- Fila con alineación vertical -->
+            <div class="col s12 m4 logo-cell">  <!-- Columna con el Logo -->
+                <img src="assets/images/Logo.png" width="160px" height="160px" 
+                alt="Logo de Distribuidora La Rivera" 
+                class="responsive-img circle" > <!-- Imagen del Logo de Distribuidora La Rivera con descripcion forma circular y responsive -->
+            </div>
+
+            <div class="col s12 m8 titulo-cell">  <!-- Columna con el Titulo Principal -->
+                <h1 class="titulo-principal">Inicio de Sesión</h1> <!--Titulo Principal-->
+                <p class="subtitulo"> Más eficiencia, menos complicaciones. <br> 
+                <strong>¡Bienvenido a Distribuidora La Rivera!</strong></p>
+            </div>
+        </div>
+
+        <!-- Formulario Login -->
+        <div class="container-login"> <!-- Contenedor del Formulario Login -->
+            <form> <!-- Elemento formulario -->
+                
+                <div class="row"> <!-- Campo para Ingresar el Correo Electrónico -->
+                    <div class="col s12 input-field">
+                        <i class="material-icons prefix">mail</i> <!-- Icono de Correo -->
+                        <input id="email" type="email" class="validate" required> <!-- Entrada para ingresar el correo-->
+                        <label for="email">Correo Electrónico</label> <!-- Etiqueta del campo -->
+                        <span class="helper-text" data-error="Ingrese un Correo Electrónico Válido"></span> <!-- Mensaje de error -->
+                    </div>
+                </div>
+
+                <div class="row"> <!-- Campo para Ingresar La Contraseña -->
+                    <div class="col s12 input-field ">
+                        <i class="material-icons prefix">lock</i> <!-- Icono de Candado -->
+                        <input id="password" type="password" class="validate" required> <!-- Entrada para ingresar la contraseña-->
+                        <label for="password">Contraseña</label> <!-- Etiqueta del campo -->
+                    </div>
+                </div>
+
+                <div class="row"> <!-- Boton de Ingresar -->
+                    <div class="col s12">
+                        <button class="btn waves-effect waves-light button-login" type="submit" name="action">
+                            INGRESAR  <!-- Texto del botón -->
+                            <i class="material-icons right">send</i><!-- Icono de Enviar -->
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row"> <!-- Enlace  de Olvidaste tu contraseña-->
+                    <div class="col s12">
+                        <a href="/recuperar-contrasena" class="forgot-password">¿Olvidaste tu contraseña?</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+
+
+<!-- Footer -->
+<footer class="page-footer" style="background-color: #400000; margin-top: 5px; padding: 0px 0;"> <!-- Pie de Página -->
+    <p class="white-text center-align">© 2025 Distribuidora La Rivera - Todos los derechos reservados</p> <!-- Texto del footer -->
+</footer> 
+
+<!-- Scripts -->
+<script src="js/materialize.min.js"></script> <!-- JavaScript de Materialize -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Inicializar componentes de Materialize cuando el DOM esté listo
+        M.AutoInit();
+    });
+</script>
+           
+</body>
+</html>
